@@ -1,0 +1,36 @@
+# Ignore everything by default
+*
+
+# Allow essential code files
+!main.py
+!check_labels.py
+!requirements.txt
+!README.md
+
+# Allow folders needed in build
+!utils/
+!model/
+
+# Exclude unneeded files/folders
+.git/
+.gitignore
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+.DS_Store
+.env
+*.pdf
+*.json
+*.log
+
+# Exclude outputs and intermediate data
+output/
+layout_data/
+input/
+training_data/
+chunk_data/
+images/
+wheels/
