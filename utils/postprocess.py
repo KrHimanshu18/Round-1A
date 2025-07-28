@@ -3,7 +3,7 @@ from typing import List, Dict, Any
 from collections import defaultdict
 
 class PostProcessor:
-    def __init__(self, output_dir: str = "output_json"):
+    def __init__(self, output_dir: str = "output"):
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
         logging.basicConfig(level=logging.INFO)

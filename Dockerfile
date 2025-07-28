@@ -51,7 +51,7 @@ _pycache_
 .DS_Store
 .env
 *.pdf
-output_json/
+output/
 layout_data/
-input_pdf/
+input/
 training_data/
