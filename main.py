@@ -1,63 +1,10 @@
 # main.py
 import os
 import glob
-from utils.gemini_trainer import GeminiTrainer
 from utils.local_model import LocalHeadingModel
 from utils.layout_utils import LayoutExtractor
 from utils.postprocess import PostProcessor
-import xgboost as xgb
 
-# def run_phase1_generate_training_data():
-#     """
-#     Uses Gemini to create labeled training data from sample PDFs.
-#     This phase requires an internet connection and a Gemini API key.
-#     """
-#     print("--- Starting Phase 1: Generating Training Data with Gemini ---")
-    
-#     # Ensure you have PDFs in this folder
-#     training_pdf_paths = glob.glob("training_pdf/*.pdf")
-#     if not training_pdf_paths:
-#         print("Error: No PDFs found in the 'training_pdf' folder.")
-#         print("Please add 1-3 sample PDFs to this folder to generate training data.")
-#         return None
-
-#     print(f"Found {len(training_pdf_paths)} PDFs for training data generation.")
-
-#     # Initialize the Gemini trainer
-#     # gemini = GeminiTrainer()
-    
-#     # This will use the Gemini API to label headings and save the results to a file inside the 'training_data' directory.
-#     # training_data_file = gemini.create_training_data(training_pdf_paths)
-#     training_data_file = "training_data/trained_output.json"
-#     # training_data_file = "training_data/gemini_training_data.json"
-    
-#     print(f"--- Phase 1 Complete. Training data saved to: {training_data_file} ---")
-#     return training_data_file
-
-# def run_phase2_train_local_model(training_data_file: str):
-#     """
-#     Trains a local XGBoost model using the Gemini-generated data.
-#     This phase is completely offline.
-#     """
-#     if not training_data_file or not os.path.exists(training_data_file):
-#         print("Error: Training data file not found.")
-#         print("Please run Phase 1 first to generate the training data.")
-#         return False
-        
-#     print("\n--- Starting Phase 2: Training the Local Heading Model (XGBoost) ---")
-    
-#     local_model = LocalHeadingModel()
-#     metrics = local_model.train_model(training_data_file)
-    
-#     if metrics:
-#         print(f"Model trained successfully using XGBoost!")
-#         print(f"Accuracy: {metrics.get('accuracy', 'N/A'):.2f}")
-#         print("The trained model has been saved in the 'model/' directory.")
-#         print("--- Phase 2 Complete ---")
-#         return True
-#     else:
-#         print("Error: Model training failed.")
-#         return False
 
 def run_phase3_process_new_pdfs():
     """
